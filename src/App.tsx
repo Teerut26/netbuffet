@@ -19,7 +19,7 @@ function App() {
                 <div className="flex gap-2">
                     <input
                         onChange={(e) => setPrice(Number(e.target.value))}
-                        className="border bg-gray-200 p-3 w-full text-3xl rounded-md"
+                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration-50 ease-in p-3 w-full text-3xl rounded-xl"
                         type="text"
                         placeholder="Price"
                         pattern="[0-9]*"
@@ -36,7 +36,7 @@ function App() {
                             )
                         }
                         placeholder="Vat"
-                        className="border bg-gray-200 p-3 w-full text-3xl rounded-md"
+                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration-50 ease-in p-3 w-full text-3xl rounded-xl"
                         type="text"
                         pattern="[0-9]*"
                         inputMode="numeric"
@@ -48,7 +48,7 @@ function App() {
                             setServiceCharge(Number(e.target.value))
                         }
                         placeholder="Service Charge"
-                        className="border bg-gray-200 p-3 w-full text-3xl rounded-md"
+                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration-50 ease-in p-3 w-full text-3xl rounded-xl"
                         type="text"
                         pattern="[0-9]*"
                         inputMode="numeric"
