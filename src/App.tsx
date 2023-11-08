@@ -3,11 +3,11 @@ import "./App.css";
 
 function App() {
     const [ServiceCharge, setServiceCharge] = useState(0);
-    const [Tax, setTax] = useState(7);
+    const [Vat, setVat] = useState(7);
     const [Price, setPrice] = useState(0);
 
     const getRealPrice = () => {
-        return Price + (Price * Tax) / 100 + (Price * ServiceCharge) / 100;
+        return Price + (Price * Vat) / 100 + (Price * ServiceCharge) / 100;
     };
 
     return (
@@ -29,13 +29,13 @@ function App() {
                 <div className="flex gap-2">
                     <input
                         onChange={(e) =>
-                            setTax(
+                            setVat(
                                 Number(e.target.value) === 0
                                     ? 7
                                     : Number(e.target.value)
                             )
                         }
-                        placeholder="Tax"
+                        placeholder="Vat"
                         className="border bg-gray-200 p-3 w-full text-3xl rounded-md"
                         type="text"
                         pattern="[0-9]*"
@@ -66,7 +66,7 @@ function App() {
                         </span>
                     </div>
                     <div>
-                        Tax : <span className="text-lg font-bold">{Tax}%</span>
+                        Vat : <span className="text-lg font-bold">{Vat}%</span>
                     </div>
                     <div>
                         Service Charge :{" "}
