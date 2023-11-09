@@ -10,6 +10,17 @@ function App() {
         return Price + (Price * Vat) / 100 + (Price * ServiceCharge) / 100;
     };
 
+    const setVatCondition = (vat: string) => {
+        if (vat === "") {
+            setVat(7);
+            return;
+        } else if (Number(vat) === 0) {
+            setVat(0);
+        } else {
+            setVat(Number(vat));
+        }
+    };
+
     return (
         <div className="min-h-screen flex justify-center items-center px-5 relative">
             <div className="flex flex-col gap-3 max-w-md">
@@ -19,7 +30,7 @@ function App() {
                 <div className="flex gap-2">
                     <input
                         onChange={(e) => setPrice(Number(e.target.value))}
-                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration-50 ease-in p-3 w-full text-3xl rounded-xl"
+                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration- ease-in p-3 w-full text-3xl rounded-xl"
                         type="text"
                         placeholder="Price"
                         pattern="[0-9]*"
@@ -28,15 +39,9 @@ function App() {
                 </div>
                 <div className="flex gap-2">
                     <input
-                        onChange={(e) =>
-                            setVat(
-                                Number(e.target.value) === 0
-                                    ? 7
-                                    : Number(e.target.value)
-                            )
-                        }
+                        onChange={(e) => setVatCondition(e.target.value)}
                         placeholder="Vat"
-                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration-50 ease-in p-3 w-full text-3xl rounded-xl"
+                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration- ease-in p-3 w-full text-3xl rounded-xl"
                         type="text"
                         pattern="[0-9]*"
                         inputMode="numeric"
@@ -48,7 +53,7 @@ function App() {
                             setServiceCharge(Number(e.target.value))
                         }
                         placeholder="Service Charge"
-                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration-50 ease-in p-3 w-full text-3xl rounded-xl"
+                        className="border-4 border-gray-300 focus:border-blue-400 outline-none bg-gray-200 focus:bg-blue-100 duration- ease-in p-3 w-full text-3xl rounded-xl"
                         type="text"
                         pattern="[0-9]*"
                         inputMode="numeric"
